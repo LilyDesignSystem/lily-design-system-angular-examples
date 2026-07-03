@@ -15,8 +15,8 @@ Based on the Angular example-app research:
   - `components/index.page.ts` → `/components`
   - `components/[slug].page.ts` → `/components/:slug`
   - `{composed}.page.ts` × 12 → `/contact-form`, `/dashboard`, …
-- **SSG prerender** via Analog's `prerender.routes` config — generates every component-detail page (492) plus the composed pages.
-- **Headless components copied** from `lily-design-system-angular-headless/components/` into `src/app/components/` (492 × 3 files = 1,461). Same copy-pattern the other 6 example apps use; no workspace dep.
+- **SSG prerender** via Analog's `prerender.routes` config — generates every component-detail page (490) plus the composed pages.
+- **Headless components copied** from `lily-design-system-angular-headless/components/` into `src/app/components/` (490 × 3 files = 1,461). Same copy-pattern the other 6 example apps use; no workspace dep.
 - **Demo HTML registry** copied from `svelte-sveltekit-examples/src/lib/data/component-demos.ts` into `src/app/component-demos.ts`. Rendered via `[innerHTML]` + `DomSanitizer.bypassSecurityTrustHtml`.
 - **NHS UK CSS** copied from `svelte-sveltekit-examples/src/lib/css/nhs.css` into `src/styles/nhs.css`, imported once in `main.ts`.
 - **Playwright e2e**: `accessibility.spec.ts` (axe-core sweep) + `responsive.spec.ts` (4-viewport × 10-route). Static-build target on port 4173.
@@ -30,14 +30,14 @@ Based on the Angular example-app research:
 - [x] Copy component-demos.ts registry.
 - [x] Copy nhs.css.
 - [x] Scaffold Playwright config + accessibility.spec.ts + responsive.spec.ts.
-- [x] Standard subproject docs (AGENTS.md, CLAUDE.md, index.md, README.md → index.md symlink, spec.md, .git-subtree-push).
+- [x] Standard subproject docs (AGENTS.md, CLAUDE.md, index.md, README.md → index.md symlink, spec/index.md, .git-subtree-push).
 - [ ] `pnpm install` + `pnpm dev` boot smoke (deferred — pulls Analog + Angular + Vite deps).
 - [ ] `pnpm test:e2e` reach 29/29 axe baseline (deferred until install).
 
 ## Tasks
 
 - [ ] Smoke-test `pnpm dev` and confirm home + /components + /components/button render.
-- [ ] Smoke-test `pnpm build` and confirm `dist/analog/public/` contains 492 + 14 prerendered HTML files.
+- [ ] Smoke-test `pnpm build` and confirm `dist/analog/public/` contains 490 + 14 prerendered HTML files.
 - [ ] Run `pnpm test:e2e` and iterate on any axe violations.
 - [ ] If desired, port the responsive-sweep route list to match this app's exact route shape (already done in `e2e/responsive.spec.ts`).
 - [ ] Consider adding per-composed-page unit tests via Vitest + TestBed (mirror the headless library's test stack).
@@ -52,4 +52,4 @@ Based on the Angular example-app research:
 - `src/styles/nhs.css`
 - 15 page files: `index.page.ts`, `components/index.page.ts`, `components/[slug].page.ts`, plus 12 composed pages
 - 2 Playwright specs: `accessibility.spec.ts`, `responsive.spec.ts`
-- 6 docs: `AGENTS.md`, `CLAUDE.md`, `index.md`, `README.md` symlink, `spec.md`, `.git-subtree-push`
+- 6 docs: `AGENTS.md`, `CLAUDE.md`, `index.md`, `README.md` symlink, `spec/index.md`, `.git-subtree-push`

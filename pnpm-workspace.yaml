@@ -1,9 +1,6 @@
 allowBuilds:
-  '@parcel/watcher': set this to true or false
-  esbuild: set this to true or false
-  lmdb: set this to true or false
-  msgpackr-extract: set this to true or false
-  nx: set this to true or false
-overrides:
-  "@analogjs/vite-plugin-angular": "1.22.5"
-  "@analogjs/vite-plugin-nitro": "1.22.5"
+  '@parcel/watcher': true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
+  nx: true

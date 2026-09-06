@@ -1,19 +1,19 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("component page: cyprus-national-passport-number-input", () => {
+test.describe("component page: eire-individual-health-identifier-input", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/components/cyprus-national-passport-number-input");
+    await page.goto("/components/eire-individual-health-identifier-input");
   });
 
   test("responds with a non-error status", async ({ page }) => {
-    const res = await page.goto("/components/cyprus-national-passport-number-input");
+    const res = await page.goto("/components/eire-individual-health-identifier-input");
     expect(res, "navigation response").not.toBeNull();
     expect(res!.status(), "http status").toBeLessThan(400);
   });
 
   test("renders the H1 with the component name", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { level: 1, name: new RegExp("^CyprusNationalPassportNumberInput$") })
+      page.getByRole("heading", { level: 1, name: new RegExp("^EireIndividualHealthIdentifierInput$") })
     ).toBeVisible();
   });
 

@@ -1,19 +1,19 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("component page: northern-ireland-health-and-care-number-view", () => {
+test.describe("component page: kypros-national-passport-number-input", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/components/northern-ireland-health-and-care-number-view");
+    await page.goto("/components/kypros-national-passport-number-input");
   });
 
   test("responds with a non-error status", async ({ page }) => {
-    const res = await page.goto("/components/northern-ireland-health-and-care-number-view");
+    const res = await page.goto("/components/kypros-national-passport-number-input");
     expect(res, "navigation response").not.toBeNull();
     expect(res!.status(), "http status").toBeLessThan(400);
   });
 
   test("renders the H1 with the component name", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { level: 1, name: new RegExp("^NorthernIrelandHealthAndCareNumberView$") })
+      page.getByRole("heading", { level: 1, name: new RegExp("^KyprosNationalPassportNumberInput$") })
     ).toBeVisible();
   });
 

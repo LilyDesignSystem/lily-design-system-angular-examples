@@ -1,19 +1,19 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("component page: ireland-individual-health-identifier-input", () => {
+test.describe("component page: tuaisceart-eireann-health-and-care-number-view", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/components/ireland-individual-health-identifier-input");
+    await page.goto("/components/tuaisceart-eireann-health-and-care-number-view");
   });
 
   test("responds with a non-error status", async ({ page }) => {
-    const res = await page.goto("/components/ireland-individual-health-identifier-input");
+    const res = await page.goto("/components/tuaisceart-eireann-health-and-care-number-view");
     expect(res, "navigation response").not.toBeNull();
     expect(res!.status(), "http status").toBeLessThan(400);
   });
 
   test("renders the H1 with the component name", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { level: 1, name: new RegExp("^IrelandIndividualHealthIdentifierInput$") })
+      page.getByRole("heading", { level: 1, name: new RegExp("^TuaisceartEireannHealthAndCareNumberView$") })
     ).toBeVisible();
   });
 
